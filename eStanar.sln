@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eStanar", "eStanar\eStanar.csproj", "{7E4BD144-252B-4F34-B424-1AE43D3A4EFA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eStanarBusinessObjectLayer", "eStanarBusinessObjectLayer\eStanarBusinessObjectLayer.csproj", "{7D69081C-FCE6-4A2B-B2F6-E334A1BD83DC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7E4BD144-252B-4F34-B424-1AE43D3A4EFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E4BD144-252B-4F34-B424-1AE43D3A4EFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E4BD144-252B-4F34-B424-1AE43D3A4EFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E4BD144-252B-4F34-B424-1AE43D3A4EFA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D69081C-FCE6-4A2B-B2F6-E334A1BD83DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D69081C-FCE6-4A2B-B2F6-E334A1BD83DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D69081C-FCE6-4A2B-B2F6-E334A1BD83DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D69081C-FCE6-4A2B-B2F6-E334A1BD83DC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
