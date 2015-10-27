@@ -7,8 +7,8 @@
     <ProjectGuid>{7D69081C-FCE6-4A2B-B2F6-E334A1BD83DC}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>eStanarBusinessObjectLayer</RootNamespace>
-    <AssemblyName>eStanarBusinessObjectLayer</AssemblyName>
+    <RootNamespace>eStanar.Domain</RootNamespace>
+    <AssemblyName>eStanar.Domain</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -40,11 +40,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Anketa.cs" />
+    <Compile Include="AnketaGlas.cs" />
+    <Compile Include="AnketaOpcija.cs" />
+    <Compile Include="Dokument.cs" />
     <Compile Include="Grad.cs" />
-    <Compile Include="Korisnik.cs" />
+    <Compile Include="Obavijest.cs" />
+    <Compile Include="ObavijestKomentar.cs" />
+    <Compile Include="ObavijestTip.cs" />
+    <Compile Include="Osoba.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Racun.cs" />
+    <Compile Include="Sastanak.cs" />
     <Compile Include="Stan.cs" />
+    <Compile Include="Stanar.cs" />
+    <Compile Include="StanVlasnik.cs" />
+    <Compile Include="Ulaz.cs" />
     <Compile Include="Zgrada.cs" />
+    <Compile Include="ZgradaPredstavnik.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

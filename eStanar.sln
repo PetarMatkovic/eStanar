@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eStanarBusinessObjectLayer", "eStanarBusinessObjectLayer\eStanarBusinessObjectLayer.csproj", "{7D69081C-FCE6-4A2B-B2F6-E334A1BD83DC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eStanar.Domain", "eStanarBusinessObjectLayer\eStanar.Domain.csproj", "{7D69081C-FCE6-4A2B-B2F6-E334A1BD83DC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eStanar", "eStanar\eStanar.csproj", "{EBD3D725-6376-4AFE-85D2-8319CB5A6E65}"
 EndProject

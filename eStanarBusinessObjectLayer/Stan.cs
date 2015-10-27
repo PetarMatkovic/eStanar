@@ -1,16 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
-namespace eStanarBusinessObjectLayer
+namespace eStanar.Domain
 {
     public class Stan
     {
+        public Stan()
+        {
+            this.Stanari = new HashSet<Stanar>();
+        }
+
         public int StanId { get; set; }
-        public int ZgradaId { get; set; }
         public decimal Povrsina { get; set; }
         public string Oznaka { get; set; }
+        public int UlazId { get; set; }
+
+        public virtual Ulaz Ulaz { get; set; }
+        public virtual ICollection<Stanar> Stanari { get; set; }
     }
 }
