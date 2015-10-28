@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace eStanar.Domain
+namespace eStanar.Domain.Entities
 {
     public class Grad
     {

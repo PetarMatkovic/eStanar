@@ -40,24 +40,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Anketa.cs" />
-    <Compile Include="AnketaGlas.cs" />
-    <Compile Include="AnketaOpcija.cs" />
-    <Compile Include="Dokument.cs" />
-    <Compile Include="Grad.cs" />
-    <Compile Include="Obavijest.cs" />
-    <Compile Include="ObavijestKomentar.cs" />
-    <Compile Include="ObavijestTip.cs" />
-    <Compile Include="Osoba.cs" />
+    <Compile Include="Entities\Anketa.cs" />
+    <Compile Include="Entities\AnketaGlas.cs" />
+    <Compile Include="Entities\AnketaOpcija.cs" />
+    <Compile Include="Entities\Dokument.cs" />
+    <Compile Include="Entities\Grad.cs" />
+    <Compile Include="Entities\Obavijest.cs" />
+    <Compile Include="Entities\ObavijestKomentar.cs" />
+    <Compile Include="Entities\ObavijestTip.cs" />
+    <Compile Include="Entities\Osoba.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Racun.cs" />
-    <Compile Include="Sastanak.cs" />
-    <Compile Include="Stan.cs" />
-    <Compile Include="Stanar.cs" />
-    <Compile Include="StanVlasnik.cs" />
-    <Compile Include="Ulaz.cs" />
-    <Compile Include="Zgrada.cs" />
-    <Compile Include="ZgradaPredstavnik.cs" />
+    <Compile Include="Entities\Racun.cs" />
+    <Compile Include="Entities\Sastanak.cs" />
+    <Compile Include="Entities\Stan.cs" />
+    <Compile Include="Entities\Stanar.cs" />
+    <Compile Include="Entities\StanVlasnik.cs" />
+    <Compile Include="Entities\Ulaz.cs" />
+    <Compile Include="Entities\Zgrada.cs" />
+    <Compile Include="Entities\ZgradaPredstavnik.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace eStanar.Domain
+namespace eStanar.Domain.Entities
 {
     public class AnketaGlas
     {

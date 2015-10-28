@@ -1,9 +1,9 @@
-﻿namespace eStanar.Domain
+﻿namespace eStanar.Domain.Entities
 {
-    public class StanVlasnik
+    public class Stanar
     {
-        public int StanVlasnikId { get; set; }
-        public int ŞtanId { get; set; }
+        public int StanarId { get; set; }
+        public int StanId { get; set; }
         public int OsobaId { get; set; }
 
         public virtual Stan Stan { get; set; }
