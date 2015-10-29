@@ -1,13 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
+using eStanar.Domain.Abstract;
+using eStanar.Domain.Entities;
 
 namespace eStanar.Controllers
 {
     public class HomeController : Controller
     {
+        private IEStanarRepository repository;
+
+        public HomeController(IEStanarRepository eStanarRepository)
+        {
+            this.repository = eStanarRepository;
+        }
+
         public ActionResult Index()
         {
             return View();
