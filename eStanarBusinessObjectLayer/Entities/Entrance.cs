@@ -24,7 +24,7 @@ namespace eStanar.Domain.Entities
         public int IdEntranceType { get; set; }
 
         [Column("ID_STRUCTURE", TypeName = "numeric")]
-        public decimal IdStructure { get; set; }
+        public int IdStructure { get; set; }
 
         [StringLength(10)]
         [Column("ENTRANCE_NUMBER")]

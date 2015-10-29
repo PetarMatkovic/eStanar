@@ -15,7 +15,7 @@ namespace eStanar.Domain.Entities
         public int IdStructurePart { get; set; }
 
         [Column("ID_PERSON", TypeName = "numeric")]
-        public decimal IdPerson { get; set; }
+        public int IdPerson { get; set; }
 
         public virtual StructurePart StructurePart { get; set; }
 

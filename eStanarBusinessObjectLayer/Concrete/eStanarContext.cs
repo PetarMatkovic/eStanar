@@ -39,14 +39,6 @@ namespace eStanar.Domain.Concrete
                 .WithRequired(e => e.City)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<Document>()
-                .Property(e => e.IdAuthor)
-                .HasPrecision(18, 0);
-
-            modelBuilder.Entity<Entrance>()
-                .Property(e => e.IdStructure)
-                .HasPrecision(18, 0);
-
             modelBuilder.Entity<Entrance>()
                 .HasMany(e => e.StructutrePart)
                 .WithRequired(e => e.Entrance)
@@ -72,18 +64,10 @@ namespace eStanar.Domain.Concrete
                 .WithRequired(e => e.Notice)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<NoticeComment>()
-                .Property(e => e.IdAuthor)
-                .HasPrecision(18, 0);
-
             modelBuilder.Entity<NoticeType>()
                 .HasMany(e => e.Notice)
                 .WithRequired(e => e.NoticeType)
                 .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<Owner>()
-                .Property(e => e.IdPerson)
-                .HasPrecision(18, 0);
 
             modelBuilder.Entity<Person>()
                 .HasMany(e => e.Account)

@@ -21,7 +21,7 @@ namespace eStanar.Domain.Entities
         public string Text { get; set; }
 
         [Column("ID_AUTHOR", TypeName = "numeric")]
-        public decimal IdAuthor { get; set; }
+        public int IdAuthor { get; set; }
 
         [Column("DATE")]
         public DateTime Date { get; set; }
