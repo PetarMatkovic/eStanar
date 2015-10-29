@@ -16,6 +16,9 @@ namespace eStanar.Controllers
 
         public ActionResult Index()
         {
+            // test
+            List<Person> persons = new List<Person>(repository.Persons);
+
             return View();
         }
 
