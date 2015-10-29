@@ -30,8 +30,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity.Design" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -40,10 +50,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\IEStanarRepository.cs" />
+    <Compile Include="Concrete\eStanarContext.cs" />
+    <Compile Include="Concrete\eStanarRepository.cs" />
+    <Compile Include="Entities\Account.cs" />
+    <Compile Include="Entities\City.cs" />
+    <Compile Include="Entities\Document.cs" />
+    <Compile Include="Entities\Entrance.cs" />
+    <Compile Include="Entities\EntranceType.cs" />
+    <Compile Include="Entities\Meeting.cs" />
+    <Compile Include="Entities\MeetingType.cs" />
+    <Compile Include="Entities\Notice.cs" />
+    <Compile Include="Entities\NoticeComment.cs" />
+    <Compile Include="Entities\NoticeType.cs" />
+    <Compile Include="Entities\Occupant.cs" />
+    <Compile Include="Entities\Owner.cs" />
+    <Compile Include="Entities\Person.cs" />
+    <Compile Include="Entities\Poll.cs" />
+    <Compile Include="Entities\PollOption.cs" />
+    <Compile Include="Entities\PollVote.cs" />
+    <Compile Include="Entities\Representative.cs" />
+    <Compile Include="Entities\Structure.cs" />
+    <Compile Include="Entities\StructurePart.cs" />
+    <Compile Include="Entities\StructurePartType.cs" />
+    <Compile Include="Entities\StructureType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Entities\" />
+    <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
