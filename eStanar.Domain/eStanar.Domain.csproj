@@ -51,6 +51,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\IEStanarRepository.cs" />
+    <Compile Include="Application\AppSettings.cs" />
+    <Compile Include="Application\Encrypter.cs" />
     <Compile Include="Concrete\eStanarContext.cs" />
     <Compile Include="Concrete\eStanarRepository.cs" />
     <Compile Include="Entities\Account.cs" />
