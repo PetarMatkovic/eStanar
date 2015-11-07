@@ -1,49 +1,25 @@
-﻿@{
+﻿@using eStanar.Domain.Entities
+@model IEnumerable<Notice>
+
+@{
     ViewBag.Title = "Obavijesti";
 }
 
-<div class="media bg-warning">
+@foreach (var n in Model)
+{
+<div class="media @n.CssClass">
     <div class="media-left">
         <i class="fa fa-exclamation-triangle fa-2x"></i>
     </div>
     <div class="media-body">
-        <h3 class="media-heading">Obavijest naslov</h3>
+        <h3 class="media-heading">@n.NoticeType.Name</h3>
         <div class="media-body-content">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            <a href="#">Više</a>
+            @n.Text
+            <a href="">Više</a>
         </div>
         <div class="media-body-footer pull-right">
-            <small>Objavljeno: 06.11.2015 13:33</small>
+            <small>Objavljeno: @n.Date</small>
         </div>
     </div>
 </div>
-<div class="media bg-info">
-    <div class="media-left">
-        <i class="fa fa-exclamation-triangle fa-2x"></i>
-    </div>
-    <div class="media-body">
-        <h3 class="media-heading">Obavijest naslov</h3>
-        <div class="media-body-content">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            <a href="#">Više</a>
-        </div>
-        <div class="media-body-footer pull-right">
-            <small>Objavljeno: 06.11.2015 13:33</small>
-        </div>
-    </div>
-</div>
-<div class="media bg-info">
-    <div class="media-left">
-        <i class="fa fa-exclamation-triangle fa-2x"></i>
-    </div>
-    <div class="media-body">
-        <h3 class="media-heading">Obavijest naslov</h3>
-        <div class="media-body-content">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            <a href="#">Više</a>
-        </div>
-        <div class="media-body-footer pull-right">
-            <small>Objavljeno: 06.11.2015 13:33</small>
-        </div>
-    </div>
-</div>
+}

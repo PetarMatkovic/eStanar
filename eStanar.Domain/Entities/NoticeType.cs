@@ -26,4 +26,6 @@ namespace eStanar.Domain.Entities
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Notice> Notice { get; set; }
     }
+
+    public enum NoticeTypeEnum { OpcaObavijest = 1, SaastanakStanara = 2 }
 }
