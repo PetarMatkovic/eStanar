@@ -1,0 +1,17 @@
+﻿@model eStanar.Domain.Entities.Notice
+
+<div class="media @Model.CssClass">
+    <div class="media-left">
+        <i class="fa fa-exclamation-triangle fa-2x"></i>
+    </div>
+    <div class="media-body">
+        <h3 class="media-heading">@Model.NoticeType.Name</h3>
+        <div class="media-body-content">
+            @Model.Text
+            <a href="">Više</a>
+        </div>
+        <div class="media-body-footer pull-right">
+            <small>Objavljeno: @Model.Date</small>
+        </div>
+    </div>
+</div>

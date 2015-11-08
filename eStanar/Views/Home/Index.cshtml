@@ -5,21 +5,6 @@
     ViewBag.Title = "Obavijesti";
 }
 
-@foreach (var n in Model)
-{
-<div class="media @n.CssClass">
-    <div class="media-left">
-        <i class="fa fa-exclamation-triangle fa-2x"></i>
-    </div>
-    <div class="media-body">
-        <h3 class="media-heading">@n.NoticeType.Name</h3>
-        <div class="media-body-content">
-            @n.Text
-            <a href="">Više</a>
-        </div>
-        <div class="media-body-footer pull-right">
-            <small>Objavljeno: @n.Date</small>
-        </div>
-    </div>
-</div>
+@foreach (var n in Model) {
+    @Html.Partial("NoticeItem", n)
 }
