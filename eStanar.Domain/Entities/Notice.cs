@@ -44,7 +44,7 @@ namespace eStanar.Domain.Entities
         public int? IdMeeting { get; set; }
 
         [NotMapped]
-        public string CssClass { get { return (IdNoticeType == (int)NoticeTypeEnum.OpcaObavijest) ? "bg-info" : "bg-warning"; } }
+        public string CssClass { get { return (IdNoticeType == (int)NoticeTypeEnum.GeneralNotice) ? "bg-info" : "bg-warning"; } }
 
         public virtual Entrance Entrance { get; set; }
 

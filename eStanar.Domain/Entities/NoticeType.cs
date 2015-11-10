@@ -27,5 +27,5 @@ namespace eStanar.Domain.Entities
         public virtual ICollection<Notice> Notice { get; set; }
     }
 
-    public enum NoticeTypeEnum { OpcaObavijest = 1, SaastanakStanara = 2 }
+    public enum NoticeTypeEnum { GeneralNotice = 1, MeetingOfTenants = 2 }
 }
