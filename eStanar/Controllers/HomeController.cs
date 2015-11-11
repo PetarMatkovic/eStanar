@@ -16,6 +16,8 @@ namespace eStanar.Controllers
 
         public ActionResult Index()
         {
+            //List<NoticeDetails> notices = DBHelper.GetNoticeDetails(1, 1);
+
             List<Notice> notices = new List<Notice>(repository.Notices);
 
             return View(notices);

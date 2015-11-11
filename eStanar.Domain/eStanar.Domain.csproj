@@ -55,6 +55,7 @@
     <Compile Include="Application\Encrypter.cs" />
     <Compile Include="Concrete\eStanarContext.cs" />
     <Compile Include="Concrete\eStanarRepository.cs" />
+    <Compile Include="Business\DBHelper.cs" />
     <Compile Include="Entities\Account.cs" />
     <Compile Include="Entities\City.cs" />
     <Compile Include="Entities\Document.cs" />
@@ -64,6 +65,7 @@
     <Compile Include="Entities\MeetingType.cs" />
     <Compile Include="Entities\Notice.cs" />
     <Compile Include="Entities\NoticeComment.cs" />
+    <Compile Include="Business\NoticeDetails.cs" />
     <Compile Include="Entities\NoticeType.cs" />
     <Compile Include="Entities\Occupant.cs" />
     <Compile Include="Entities\Owner.cs" />
