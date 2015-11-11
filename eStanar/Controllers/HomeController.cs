@@ -1,7 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Web.Mvc;
 using eStanar.Domain.Abstract;
-using eStanar.Domain.Entities;
+using eStanar.Domain.Business;
+using eStanar.ViewModel;
 
 namespace eStanar.Controllers
 {
@@ -16,11 +17,10 @@ namespace eStanar.Controllers
 
         public ActionResult Index()
         {
-            //List<NoticeDetails> notices = DBHelper.GetNoticeDetails(1, 1);
+            NoticeViewModel nvm = new NoticeViewModel();
+            nvm.NoticeDetailsList = DBHelper.GetNoticeDetails(1, 1); ;
 
-            List<Notice> notices = new List<Notice>(repository.Notices);
-
-            return View(notices);
+            return View(nvm);
         }
 
         public ActionResult About()

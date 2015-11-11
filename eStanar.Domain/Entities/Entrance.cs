@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace eStanar.Domain.Entities
 {
-    [Table("ENTRANCE")]
+    [Table("Entrance")]
     public partial class Entrance
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -16,18 +16,17 @@ namespace eStanar.Domain.Entities
         }
 
         [Key]
-        [Column("ID_ENTRANCE", TypeName = "numeric")]
+        [Column(TypeName = "numeric")]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int IdEntrance { get; set; }
 
-        [Column("ID_ENTRANCE_TYPE", TypeName = "numeric")]
+        [Column(TypeName = "numeric")]
         public int IdEntranceType { get; set; }
 
-        [Column("ID_STRUCTURE", TypeName = "numeric")]
+        [Column(TypeName = "numeric")]
         public int IdStructure { get; set; }
 
         [StringLength(10)]
-        [Column("ENTRANCE_NUMBER")]
         public string EntranceNumber { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

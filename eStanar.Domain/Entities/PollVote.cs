@@ -4,21 +4,20 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace eStanar.Domain.Entities
 {
-    [Table("POLL_VOTE")]
+    [Table("PollVote")]
     public partial class PollVote
     {
         [Key]
-        [Column("ID_POLL_VOTE", TypeName = "numeric")]
+        [Column(TypeName = "numeric")]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int IdPollVote { get; set; }
 
-        [Column("ID_POLL_OPTION", TypeName = "numeric")]
+        [Column(TypeName = "numeric")]
         public int IdPollOption { get; set; }
 
-        [Column("ID_PERSON", TypeName = "numeric")]
+        [Column(TypeName = "numeric")]
         public int IdPerson { get; set; }
 
-        [Column("DATE")]
         public DateTime Date { get; set; }
 
         public virtual Person Person { get; set; }

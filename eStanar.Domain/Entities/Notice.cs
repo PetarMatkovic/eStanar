@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace eStanar.Domain.Entities
 {
-    [Table("NOTICE")]
+    [Table("Notice")]
     public partial class Notice
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -16,35 +16,31 @@ namespace eStanar.Domain.Entities
         }
 
         [Key]
-        [Column("ID_NOTICE", TypeName = "numeric")]
+        [Column(TypeName = "numeric")]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int IdNotice { get; set; }
 
-        [Column("ID_NOTICE_TYPE", TypeName = "numeric")]
+        [Column(TypeName = "numeric")]
         public int IdNoticeType { get; set; }
 
-        [Column("ID_STRUCTURE", TypeName = "numeric")]
+        [Column(TypeName = "numeric")]
         public int IdStructure { get; set; }
 
         [Required]
         [StringLength(1000)]
-        [Column("TEXT")]
         public string Text { get; set; }
 
-        [Column("ID_AUTHOR", TypeName = "numeric")]
+        [Column(TypeName = "numeric")]
         public int IdAuthor { get; set; }
 
-        [Column("DATE", TypeName = "date")]
+        [Column(TypeName = "date")]
         public DateTime Date { get; set; }
 
-        [Column("ID_ENTRANCE", TypeName = "numeric")]
+        [Column(TypeName = "numeric")]
         public int? IdEntrance { get; set; }
 
-        [Column("ID_MEETING", TypeName = "numeric")]
+        [Column(TypeName = "numeric")]
         public int? IdMeeting { get; set; }
-
-        [NotMapped]
-        public string CssClass { get { return (IdNoticeType == (int)NoticeTypeEnum.GeneralNotice) ? "bg-info" : "bg-warning"; } }
 
         public virtual Entrance Entrance { get; set; }
 

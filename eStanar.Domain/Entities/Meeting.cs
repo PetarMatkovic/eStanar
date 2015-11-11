@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace eStanar.Domain.Entities
 {
-    [Table("MEETING")]
+    [Table("Meeting")]
     public partial class Meeting
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -15,29 +15,25 @@ namespace eStanar.Domain.Entities
         }
 
         [Key]
-        [Column("ID_MEETING", TypeName = "numeric")]
+        [Column(TypeName = "numeric")]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int IdMeeting { get; set; }
 
-        [Column("ID_MEETING_TYPE", TypeName = "numeric")]
+        [Column(TypeName = "numeric")]
         public int IdMeetingType { get; set; }
 
-        [Column("DATE_CREATED")]
         public DateTime DateCreated { get; set; }
 
-        [Column("DATE_OF_MEETING")]
         public DateTime DateOfMeeting { get; set; }
 
         [Required]
         [StringLength(50)]
-        [Column("TITLE")]
         public string Title { get; set; }
 
         [StringLength(250)]
-        [Column("DESCRIPTION")]
         public string Description { get; set; }
 
-        [Column("PRIORITY", TypeName = "numeric")]
+        [Column(TypeName = "numeric")]
         public int Priority { get; set; }
 
         public virtual MeetingType MeetingType { get; set; }

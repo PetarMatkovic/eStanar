@@ -1,10 +1,10 @@
-﻿@using eStanar.Domain.Entities
-@model IEnumerable<Notice>
+﻿@using eStanar.ViewModel
+@model NoticeViewModel
 
 @{
     ViewBag.Title = "Obavijesti";
 }
 
-@foreach (var n in Model) {
+@foreach (var n in Model.NoticeDetailsList) {
     @Html.Partial("NoticeItem", n)
 }

@@ -198,6 +198,7 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModel\NoticeViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\Settings.xml" />

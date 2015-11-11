@@ -28,7 +28,7 @@ namespace eStanar
                 LoginPath = new PathString("/Account/LogOn")
             });
 
-            app.UseExternalSignInCookie(DefaultAuthenticationTypes.ExternalCookie);
+            /*app.UseExternalSignInCookie(DefaultAuthenticationTypes.ExternalCookie);
 
             if (!string.IsNullOrEmpty(AppSettings.GoogleClientId))
             {
@@ -49,7 +49,7 @@ namespace eStanar
                 app.UseGitHubAuthentication(
                     clientId: AppSettings.GitHubClientId,
                     clientSecret: AppSettings.GitHubClientSecret);
-            }
+            }*/
 
             AntiForgeryConfig.UniqueClaimTypeIdentifier = ClaimTypes.NameIdentifier;
         }

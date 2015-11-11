@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace eStanar.Domain.Entities
 {
-    [Table("STRUCTURE_PART")]
+    [Table("StructurePart")]
     public partial class StructurePart
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -15,17 +15,17 @@ namespace eStanar.Domain.Entities
         }
 
         [Key]
-        [Column("ID_STRUCTURE_PART", TypeName = "numeric")]
+        [Column(TypeName = "numeric")]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int IdStructurePart { get; set; }
 
-        [Column("ID_STRUCTURE_PART_TYPE", TypeName = "numeric")]
+        [Column(TypeName = "numeric")]
         public int IdStructurePartType { get; set; }
 
-        [Column("ID_ENTRANCE", TypeName = "numeric")]
+        [Column(TypeName = "numeric")]
         public int IdEntrance { get; set; }
 
-        [Column("AREA_IN_SQUARE_METERS", TypeName = "numeric")]
+        [Column(TypeName = "numeric")]
         public decimal? AreaInSquareMeters { get; set; }
 
         public virtual Entrance Entrance { get; set; }

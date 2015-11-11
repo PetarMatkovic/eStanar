@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace eStanar.Domain.Entities
 {
-    [Table("POLL_OPTION")]
+    [Table("PollOption")]
     public partial class PollOption
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -14,16 +14,15 @@ namespace eStanar.Domain.Entities
         }
 
         [Key]
-        [Column("ID_POLL_OPTION", TypeName = "numeric")]
+        [Column(TypeName = "numeric")]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int IdPollOption { get; set; }
 
-        [Column("ID_POLL", TypeName = "numeric")]
+        [Column(TypeName = "numeric")]
         public int IdPoll { get; set; }
 
         [Required]
         [StringLength(50)]
-        [Column("TEXT")]
         public string Text { get; set; }
 
         public virtual Poll Poll { get; set; }

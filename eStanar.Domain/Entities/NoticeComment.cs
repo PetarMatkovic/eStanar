@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace eStanar.Domain.Entities
 {
-    [Table("NOTICE_COMMENT")]
+    [Table("NoticeComment")]
     public partial class NoticeComment
     {
         [Key]
@@ -12,18 +12,16 @@ namespace eStanar.Domain.Entities
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int IdNoticeComment { get; set; }
 
-        [Column("ID_NOTICE", TypeName = "numeric")]
+        [Column(TypeName = "numeric")]
         public int IdNotice { get; set; }
 
         [Required]
         [StringLength(1000)]
-        [Column("TEXT")]
         public string Text { get; set; }
 
-        [Column("ID_AUTHOR", TypeName = "numeric")]
+        [Column(TypeName = "numeric")]
         public int IdAuthor { get; set; }
 
-        [Column("DATE")]
         public DateTime Date { get; set; }
 
         public virtual Notice Notice { get; set; }

@@ -4,24 +4,24 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace eStanar.Domain.Entities
 {
-    [Table("REPRESENTATIVE")]
+    [Table("Representative")]
     public partial class Representative
     {
         [Key]
-        [Column("ID_REPRESENTATIVE", TypeName = "numeric")]
+        [Column(TypeName = "numeric")]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int IdRepresentative { get; set; }
 
-        [Column("ID_STRUCTURE", TypeName = "numeric")]
+        [Column(TypeName = "numeric")]
         public int IdStructure { get; set; }
 
-        [Column("ID_PERSON", TypeName = "numeric")]
+        [Column(TypeName = "numeric")]
         public int IdPerson { get; set; }
 
-        [Column("DATE_FROM", TypeName = "date")]
+        [Column(TypeName = "date")]
         public DateTime DateFrom { get; set; }
 
-        [Column("DATE_TO", TypeName = "date")]
+        [Column(TypeName = "date")]
         public DateTime? DateTo { get; set; }
 
         public virtual Person Person { get; set; }

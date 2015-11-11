@@ -17,7 +17,7 @@ namespace eStanar.Domain.Business
             {
                 SqlParameter idPersonParameter = new SqlParameter()
                 {
-                    ParameterName = "@id_person_in",
+                    ParameterName = "@idPersonIn",
                     DbType = System.Data.DbType.Int32,
                     Direction = System.Data.ParameterDirection.Input,
                     Value = idPerson
@@ -25,13 +25,13 @@ namespace eStanar.Domain.Business
 
                 SqlParameter idStructureParameter = new SqlParameter()
                 {
-                    ParameterName = "@id_structure_in",
+                    ParameterName = "@idStructureIn",
                     DbType = System.Data.DbType.Int32,
                     Direction = System.Data.ParameterDirection.Input,
                     Value = (object)idStructure ?? DBNull.Value
                 };
 
-                noticeDetails = context.Database.SqlQuery<NoticeDetails>("GET_NOTICES @id_person_in, @id_structure_in", idPersonParameter, idStructureParameter).ToList();
+                noticeDetails = context.Database.SqlQuery<NoticeDetails>("GetNotices @idPersonIn, @idStructureIn", idPersonParameter, idStructureParameter).ToList();
             }
 
             return noticeDetails;

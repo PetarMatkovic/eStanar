@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace eStanar.Domain.Entities
 {
-    [Table("STRUCTURE")]
+    [Table("Structure")]
     public partial class Structure
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -17,26 +17,24 @@ namespace eStanar.Domain.Entities
         }
 
         [Key]
-        [Column("ID_STRUCTURE", TypeName = "numeric")]
+        [Column(TypeName = "numeric")]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int IdStructure { get; set; }
 
-        [Column("ID_STRUCTURE_TYPE", TypeName = "numeric")]
+        [Column(TypeName = "numeric")]
         public int IdStructureType { get; set; }
 
-        [Column("ID_CITY", TypeName = "numeric")]
+        [Column(TypeName = "numeric")]
         public int IdCity { get; set; }
 
-        [Column("NUMBER_OF_FLOORS", TypeName = "numeric")]
+        [Column(TypeName = "numeric")]
         public int NumberOfFloors { get; set; }
 
         [Required]
         [StringLength(250)]
-        [Column("ADDRESS")]
         public string Address { get; set; }
 
         [StringLength(250)]
-        [Column("DESCRIPTION")]
         public string Description { get; set; }
 
         public virtual City City { get; set; }

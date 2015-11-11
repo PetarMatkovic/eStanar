@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace eStanar.Domain.Entities
 {
-    [Table("NOTICE_TYPE")]
+    [Table("NoticeType")]
     public partial class NoticeType
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -14,18 +14,15 @@ namespace eStanar.Domain.Entities
         }
 
         [Key]
-        [Column("ID_NOTICE_TYPE", TypeName = "numeric")]
+        [Column(TypeName = "numeric")]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int IdNoticeType { get; set; }
 
         [Required]
         [StringLength(50)]
-        [Column("NAME")]
         public string Name { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Notice> Notice { get; set; }
     }
-
-    public enum NoticeTypeEnum { GeneralNotice = 1, MeetingOfTenants = 2 }
 }

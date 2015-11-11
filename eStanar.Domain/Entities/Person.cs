@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace eStanar.Domain.Entities
 {
-    [Table("PERSON")]
+    [Table("Person")]
     public partial class Person
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -21,22 +21,19 @@ namespace eStanar.Domain.Entities
         }
 
         [Key]
-        [Column("ID_PERSON", TypeName = "numeric")]
+        [Column(TypeName = "numeric")]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int IdPerson { get; set; }
 
         [Required]
         [StringLength(250)]
-        [Column("NAME")]
         public string Name { get; set; }
 
         [Required]
         [StringLength(250)]
-        [Column("LAST_NAME")]
         public string LastName { get; set; }
 
         [StringLength(50)]
-        [Column("TELEPHONE")]
         public string Telephone { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
