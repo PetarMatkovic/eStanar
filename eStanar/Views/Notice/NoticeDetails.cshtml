@@ -6,20 +6,23 @@
 }
 
 @Html.Partial("NoticeItem", new NoticeDetailsItemViewModel() { NoticeDetails = Model.Notice, HideMoreDetailsLink = true })
-
-<hr />
-
+<br />
 @using (Html.BeginForm("InsertComment", "Notice"))
 {
-    <div class="form-group">
-        @Html.TextBox("text", null, new { @class = "form-control" })
-        @Html.Hidden("idNotice", Model.Notice.IdNotice)
-        <button class="btn btn-primary">Dodaj komentar</button>
+    <div class="well well-sm" style="margin:0;">
+        <div class="form-group">
+            <label class="control-label">Komentirajte obavijest</label>
+            @Html.TextArea("text", null, new { @class = "form-control", @rows = 5 })
+            @Html.Hidden("idNotice", Model.Notice.IdNotice)
+        </div>
+        <div class="form-group text-right" style="margin-bottom:0;">
+            <button class="btn btn-sm btn-primary">Spremi</button>
+        </div>
     </div>
 }
-
-@foreach (var n in Model.NoticeComments)
-{
-    @Html.Partial("CommentItem", n)
-}
-
+<ul class="list-group">
+    @foreach (var n in Model.NoticeComments)
+    {
+        @Html.Partial("CommentItem", n)
+    }
+</ul>

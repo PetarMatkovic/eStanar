@@ -1,16 +1,18 @@
 ﻿@model eStanar.Domain.Business.NoticeComment
 
-<div class="media">
-    <div class="media-left">
-        <i class="fa fa-comment fa-1x"></i>
-    </div>
-    <div class="media-body">
-        <h3 class="media-heading">@Model.Author</h3>
-        <div class="media-body-content">
-            @Model.Text
+<li class="list-group-item" style="border-top:1px solid #FFFFFF;">
+    <div class=" media" style="margin:0;">
+        <div class="media-left">
+            <i class="fa fa-comment fa-1x"></i>
         </div>
-        <div class="media-body-footer pull-right">
-            <small>Objavljeno: @Model.Date</small>
+        <div class="media-body">
+            <div class="row">
+                <div class="col-xs-12 col-sm-8"><strong>@Model.Author</strong></div>
+                <div class="col-xs-12 col-sm-4 comment-date"><small>@Model.Date</small></div>
+            </div>
+            <div class="media-body-content">
+                @Model.Text
+            </div>
         </div>
     </div>
-</div>
+</li>
