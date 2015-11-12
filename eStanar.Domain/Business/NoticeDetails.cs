@@ -24,6 +24,12 @@ namespace eStanar.Domain.Business
         public string NoticeTypeName { get; set; }
 
         public string CssClass { get { return (IdNoticeType == (int)NoticeTypeEnum.GeneralNotice) ? "bg-info" : "bg-warning"; } }
+
+        public string AuthorName { get; set; }
+
+        public string AuthorLastName { get; set; }
+
+        public string Auhor { get { return String.Format("{0} {1}", AuthorLastName, AuthorName); } }
     }
 
     public enum NoticeTypeEnum { GeneralNotice = 1, MeetingOfTenants = 2 }

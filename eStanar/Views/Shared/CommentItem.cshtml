@@ -1,0 +1,16 @@
+﻿@model eStanar.Domain.Business.NoticeComment
+
+<div class="media">
+    <div class="media-left">
+        <i class="fa fa-comment fa-1x"></i>
+    </div>
+    <div class="media-body">
+        <h3 class="media-heading">@Model.Author</h3>
+        <div class="media-body-content">
+            @Model.Text
+        </div>
+        <div class="media-body-footer pull-right">
+            <small>Objavljeno: @Model.Date</small>
+        </div>
+    </div>
+</div>

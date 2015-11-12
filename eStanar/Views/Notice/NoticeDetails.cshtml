@@ -1,0 +1,25 @@
+﻿@using eStanar.ViewModel
+@model NoticeDetailsViewModel
+
+@{
+    ViewBag.Title = "Obavijest";
+}
+
+@Html.Partial("NoticeItem", new NoticeDetailsItemViewModel() { NoticeDetails = Model.Notice, HideMoreDetailsLink = true })
+
+<hr />
+
+@using (Html.BeginForm("InsertComment", "Notice"))
+{
+    <div class="form-group">
+        @Html.TextBox("text", null, new { @class = "form-control" })
+        @Html.Hidden("idNotice", Model.Notice.IdNotice)
+        <button class="btn btn-primary">Dodaj komentar</button>
+    </div>
+}
+
+@foreach (var n in Model.NoticeComments)
+{
+    @Html.Partial("CommentItem", n)
+}
+
