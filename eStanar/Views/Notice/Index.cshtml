@@ -1,11 +1,13 @@
 ﻿@using eStanar.ViewModel
 @model NoticeViewModel
+
 @{
     ViewBag.Title = "Obavijesti";
 }
 
-@foreach (var n in Model.NoticeDetailsList)
-{
-    @Html.Partial("NoticeItem", new NoticeDetailsItemViewModel() { NoticeDetails = n, HideMoreDetailsLink = false })
-}
-
+<ul class="list-group">
+    @foreach (var n in Model.NoticeDetailsList)
+    {
+        @Html.Partial("NoticeItem", new NoticeDetailsItemViewModel() { NoticeDetails = n, HideMoreDetailsLink = false })
+    }
+</ul>

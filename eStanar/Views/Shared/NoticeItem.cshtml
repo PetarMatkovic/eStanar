@@ -1,19 +1,22 @@
 ﻿@model eStanar.ViewModel.NoticeDetailsItemViewModel
 
-<div class="media @Model.NoticeDetails.CssClass">
-    <div class="media-left">
-        <i class="fa fa-exclamation-triangle fa-2x"></i>
-    </div>
-    <div class="media-body">
-        <h3 class="media-heading">@Model.NoticeDetails.NoticeTypeName</h3>
-        <div class="media-body-content">
-            @Model.NoticeDetails.Text
-            @if (!@Model.HideMoreDetailsLink) {
-                @Html.ActionLink("Više", "NoticeDetails", "Notice", new { idNotice = Model.NoticeDetails.IdNotice }, null)
-            }
+<li class="list-group-item @Model.NoticeDetails.CssClass">
+    <div class="media">
+        <div class="media-left">
+            <i class="fa fa-exclamation-triangle fa-2x"></i>
         </div>
-        <div class="media-body-footer pull-right">
-            <small>@Model.NoticeDetails.Auhor, @Model.NoticeDetails.Date</small>
+        <div class="media-body">
+            <h3 class="media-heading">@Model.NoticeDetails.NoticeTypeName</h3>
+            <div class="media-body-content">
+                @Model.NoticeDetails.Text
+                @if (!@Model.HideMoreDetailsLink)
+                {
+                    @Html.ActionLink("Više", "NoticeDetails", "Notice", new { idNotice = Model.NoticeDetails.IdNotice }, null)
+                }
+            </div>
+            <div class="media-body-footer pull-right">
+                <small>@Model.NoticeDetails.Auhor, @Model.NoticeDetails.Date</small>
+            </div>
         </div>
     </div>
-</div>
+</li>
