@@ -6,8 +6,8 @@
 }
 
 <ul class="list-group">
-    @foreach (var n in Model.NoticeDetailsList)
+    @foreach (var n in Model.NoticeDetailsList.Select((model, index) => new { model, index }))
     {
-        @Html.Partial("NoticeItem", new NoticeDetailsItemViewModel() { NoticeDetails = n, HideMoreDetailsLink = false })
+        @Html.Partial("NoticeItem", new NoticeDetailsItemViewModel() { NoticeDetails = n.model, HideMoreDetailsLink = false, DisplayBottomBorder = (n.index < @Model.NoticeDetailsList.Count - 1) })
     }
 </ul>

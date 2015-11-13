@@ -23,7 +23,7 @@ namespace eStanar.Domain.Business
 
         public string NoticeTypeName { get; set; }
 
-        public string CssClass { get { return (IdNoticeType == (int)NoticeTypeEnum.GeneralNotice) ? "bg-info" : "bg-warning"; } }
+        public string CssClass { get { return String.Format("notice-type-{0}", IdNoticeType); } }
 
         public string AuthorName { get; set; }
 

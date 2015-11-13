@@ -6,5 +6,6 @@ namespace eStanar.ViewModel
     {
         public NoticeDetails NoticeDetails { get; set; }
         public bool HideMoreDetailsLink { get; set; }
+        public bool DisplayBottomBorder { get; set; }
     }
 }

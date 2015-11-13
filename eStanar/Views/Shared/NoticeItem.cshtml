@@ -1,6 +1,6 @@
 ﻿@model eStanar.ViewModel.NoticeDetailsItemViewModel
 
-<li class="list-group-item @Model.NoticeDetails.CssClass">
+<li class="list-group-item @Model.NoticeDetails.CssClass @if (@Model.DisplayBottomBorder) {<text>border-bottom</text>}">
     <div class="media">
         <div class="media-left">
             <i class="fa fa-exclamation-triangle fa-2x"></i>
