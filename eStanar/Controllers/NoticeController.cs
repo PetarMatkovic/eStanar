@@ -42,7 +42,18 @@ namespace eStanar.Controllers
         public ActionResult NewNotice()
         {
             //PROVJERITI AUTORIZACIJE korisnika iz sessiona?!
-            return View();
+            //Dohvatiti tipove mogucih obavijest za korisnika
+            List<NoticeType> noticeTypes = DBHelper.GetNoticeTypesAll();
+            NewNoticeViewModel newNoticeVM = new NewNoticeViewModel();
+            newNoticeVM.NoticeTypeList = noticeTypes;
+            newNoticeVM.IdStructure = 1;
+            return View(newNoticeVM);
+        }
+
+        public ActionResult InsertNewNotice(int idNoticeType, string text, int idStructure)
+        {
+            DBHelper.InsertNotice(idNoticeType, idStructure, text, 1, null, null);
+            return RedirectToAction("Index");
         }
     }
 }

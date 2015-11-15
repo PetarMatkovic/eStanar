@@ -199,6 +199,7 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModel\NewNoticeViewModel.cs" />
     <Compile Include="ViewModel\NoticeDetailsItemViewModel.cs" />
     <Compile Include="ViewModel\NoticeDetailsViewModel.cs" />
     <Compile Include="ViewModel\NoticeViewModel.cs" />

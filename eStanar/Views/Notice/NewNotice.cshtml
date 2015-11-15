@@ -1,7 +1,45 @@
-﻿
+﻿@using eStanar.ViewModel
+@model NewNoticeViewModel
 @{
-    ViewBag.Title = "NewNotice";
+    ViewBag.Title = "Nova obavijest";
 }
 
-<h2>NewNotice</h2>
-
+@using (Html.BeginForm("InsertNewNotice", "Notice"))
+{
+    <div class="well well-sm" style="margin:0;">
+        <div class="form-group">
+            <label class="control-label input-group" for="idNoticeType">Vrsta obavijesti</label>
+            <div class="btn-group">
+                @{
+                    int num = 1;
+                    foreach (var tip in Model.NoticeTypeList)
+                    {
+                        if (num == 1)
+                        {
+                            <label class="btn btn-default">
+                                <input type="radio" name="idNoticeType" value="@tip.IdNoticeType" checked="checked" />
+                                @tip.Name
+                            </label>
+                        }
+                        else
+                        {
+                            <label class="btn btn-default">
+                                <input type="radio" name="idNoticeType" value="@tip.IdNoticeType" />
+                                @tip.Name
+                            </label>
+                        }
+                        num++;
+                    }
+                }
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label">Obavijest</label>
+            @Html.TextArea("text", null, new { @class = "form-control", @rows = 10 })
+            @Html.Hidden("idStructure", Model.IdStructure)
+        </div>
+        <div class="form-group text-right" style="margin-bottom:0;">
+            <button class="btn btn-sm btn-primary">Spremi</button>
+        </div>
+    </div>
+}

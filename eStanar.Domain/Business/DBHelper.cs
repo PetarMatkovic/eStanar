@@ -125,5 +125,92 @@ namespace eStanar.Domain.Business
                 }
             }
         }
+
+        public static List<NoticeType> GetNoticeTypesAll()
+        {
+            List<NoticeType> noticeTypes = null;
+
+            using (eStanarContext context = new eStanarContext())
+            {
+
+                noticeTypes = context.Database.SqlQuery<NoticeType>("GetNoticeTypesAll").ToList();
+            }
+
+            return noticeTypes;
+        }
+
+        public static void InsertNotice(int idNoticeType, int idStructure, string text, int idAuthor, int? idEntrance, int? idMeeting)
+        {
+            using (eStanarContext context = new eStanarContext())
+            {
+                using (IDbConnection oaConnection = context.Database.Connection)
+                {
+                    oaConnection.Open();
+
+                    using (IDbCommand oaCommand = oaConnection.CreateCommand())
+                    {
+                        oaCommand.CommandType = CommandType.StoredProcedure;
+                        oaCommand.CommandText = "InsertNotice";
+                        
+                        SqlParameter idNoticeTypeParameter = new SqlParameter()
+                        {
+                            ParameterName = "@idNoticeTypeIn",
+                            DbType = System.Data.DbType.Int32,
+                            Direction = System.Data.ParameterDirection.Input,
+                            Value = idNoticeType
+                        };
+
+                        SqlParameter idStructureParameter = new SqlParameter()
+                        {
+                            ParameterName = "@idStructureIn",
+                            DbType = System.Data.DbType.Int32,
+                            Direction = System.Data.ParameterDirection.Input,
+                            Value = idStructure
+                        };
+
+                        SqlParameter textInParameter = new SqlParameter()
+                        {
+                            ParameterName = "@textIn",
+                            DbType = System.Data.DbType.String,
+                            Direction = System.Data.ParameterDirection.Input,
+                            Value = text
+                        };
+
+                        SqlParameter idAuthorParameter = new SqlParameter()
+                        {
+                            ParameterName = "@idAuthorIn",
+                            DbType = System.Data.DbType.Int32,
+                            Direction = System.Data.ParameterDirection.Input,
+                            Value = idAuthor
+                        };
+
+                        SqlParameter idEntranceParameter = new SqlParameter()
+                        {
+                            ParameterName = "@idEntranceIn",
+                            DbType = System.Data.DbType.Int32,
+                            Direction = System.Data.ParameterDirection.Input,
+                            Value = idEntrance.HasValue ? idEntrance : (object)DBNull.Value
+                        };
+
+                        SqlParameter idMeetingParameter = new SqlParameter()
+                        {
+                            ParameterName = "@idMeetingIn",
+                            DbType = System.Data.DbType.Int32,
+                            Direction = System.Data.ParameterDirection.Input,
+                            Value = idMeeting.HasValue ? idMeeting : (object)DBNull.Value
+                        };
+
+                        oaCommand.Parameters.Add(idNoticeTypeParameter);
+                        oaCommand.Parameters.Add(idStructureParameter);
+                        oaCommand.Parameters.Add(textInParameter);
+                        oaCommand.Parameters.Add(idAuthorParameter);
+                        oaCommand.Parameters.Add(idEntranceParameter);
+                        oaCommand.Parameters.Add(idMeetingParameter);
+
+                        oaCommand.ExecuteNonQuery();
+                    }
+                }
+            }
+        }
     }
 }
