@@ -1,0 +1,55 @@
+﻿@using eStanar.ViewModel
+@model UpdatePollViewModel
+@{
+    ViewBag.Title = "Editiranje ankete";
+}
+@section Scripts
+{
+    <script src="@Url.Content("~/Scripts/poll.js")"></script>
+}
+
+@using (Html.BeginForm("UpdatePoll", "Poll"))
+{
+    <div class="well well-sm" style="margin:0;">
+        <div class="form-group">
+            <label class="control-label">Tekst ankete</label>
+            @Html.TextArea("text", Model.PollDetails.Title, new { @class = "form-control", @rows = 5 })
+            @Html.Hidden("idPoll", Model.IdPoll.Value)
+        </div>
+        <div class="form-group">
+            <label class="control-label">Datum od kada anketa vrijedi</label>
+            @Html.TextBox("dateFrom", Model.PollDetails.DateFrom.ToShortDateString(), new { @class = "form-control datefield" })
+        </div>
+        <div class="form-group">
+            <label class="control-label">Datum do kada anketa vrijedi (opcionalno)</label>
+            @Html.TextBox("dateTo", Model.PollDetails.DateTo.HasValue ? Model.PollDetails.DateTo.Value.ToShortDateString() : String.Empty, new { @class = "form-control datefield" })
+        </div>
+        <div class="form-group text-right" style="margin-bottom:0;">
+            <button class="btn btn-sm btn-primary">Spremi</button>
+        </div>
+    </div>
+}
+<br />
+@if (@Model.IdPoll != null)
+{
+    using (Html.BeginForm("InsertPollOption", "Poll"))
+    {
+        <div class="well well-sm" style="margin:0;">
+            <div class="form-group">
+                <label class="control-label">Unesite odgovor</label>
+                @Html.TextArea("text", null, new { @class = "form-control", @rows = 5 })
+                @Html.Hidden("idPoll", Model.IdPoll)
+                @Html.Hidden("idPollOption", (Model.IdPollOption.HasValue ? Model.IdPollOption.Value.ToString() : String.Empty))
+            </div>
+            <div class="form-group text-right" style="margin-bottom:0;">
+                <button class="btn btn-sm btn-primary">Spremi</button>
+            </div>
+        </div>
+    }
+    <ul class="list-group">
+        @foreach (var p in Model.PollOptionList)
+        {
+            @Html.Partial("PollOptionItem", p)
+        }
+    </ul>
+}
