@@ -447,5 +447,101 @@ namespace eStanar.Domain.Business
 
             return idPollOption;
         }
+
+        public static void UpdatePollOption(int idPollOption, string text)
+        {
+            using (eStanarContext context = new eStanarContext())
+            {
+                using (IDbConnection oaConnection = context.Database.Connection)
+                {
+                    oaConnection.Open();
+
+                    using (IDbCommand oaCommand = oaConnection.CreateCommand())
+                    {
+                        oaCommand.CommandType = CommandType.StoredProcedure;
+                        oaCommand.CommandText = "UpdatePollOption";
+
+                        SqlParameter idPollOptionParameter = new SqlParameter()
+                        {
+                            ParameterName = "@idPollOption",
+                            DbType = System.Data.DbType.Int32,
+                            Direction = System.Data.ParameterDirection.Input,
+                            Value = idPollOption
+                        };
+
+                        SqlParameter textInParameter = new SqlParameter()
+                        {
+                            ParameterName = "@textIn",
+                            DbType = System.Data.DbType.String,
+                            Direction = System.Data.ParameterDirection.Input,
+                            Value = (object)text ?? DBNull.Value
+                        };
+
+                        oaCommand.Parameters.Add(idPollOptionParameter);
+                        oaCommand.Parameters.Add(textInParameter);
+
+                        oaCommand.ExecuteNonQuery();
+                    }
+                }
+            }
+        }
+
+        public static void DeletePoll(int idPoll)
+        {
+            using (eStanarContext context = new eStanarContext())
+            {
+                using (IDbConnection oaConnection = context.Database.Connection)
+                {
+                    oaConnection.Open();
+
+                    using (IDbCommand oaCommand = oaConnection.CreateCommand())
+                    {
+                        oaCommand.CommandType = CommandType.StoredProcedure;
+                        oaCommand.CommandText = "DeletePoll";
+
+                        SqlParameter idPollParameter = new SqlParameter()
+                        {
+                            ParameterName = "@idPollIn",
+                            DbType = System.Data.DbType.Int32,
+                            Direction = System.Data.ParameterDirection.Input,
+                            Value = idPoll
+                        };
+
+                        oaCommand.Parameters.Add(idPollParameter);
+
+                        oaCommand.ExecuteNonQuery();
+                    }
+                }
+            }
+        }
+
+        public static void DeletePollOption(int idPollOption)
+        {
+            using (eStanarContext context = new eStanarContext())
+            {
+                using (IDbConnection oaConnection = context.Database.Connection)
+                {
+                    oaConnection.Open();
+
+                    using (IDbCommand oaCommand = oaConnection.CreateCommand())
+                    {
+                        oaCommand.CommandType = CommandType.StoredProcedure;
+                        oaCommand.CommandText = "DeletePollOption";
+
+                        SqlParameter idPollParameter = new SqlParameter()
+                        {
+                            ParameterName = "@idPollOptionIn",
+                            DbType = System.Data.DbType.Int32,
+                            Direction = System.Data.ParameterDirection.Input,
+                            Value = idPollOption
+                        };
+
+                        oaCommand.Parameters.Add(idPollParameter);
+
+                        oaCommand.ExecuteNonQuery();
+                    }
+                }
+            }
+        }
     }
 }

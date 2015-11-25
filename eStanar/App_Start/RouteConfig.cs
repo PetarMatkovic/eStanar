@@ -14,6 +14,12 @@ namespace eStanar
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+                name: "EditPoll",
+                url: "Poll/{action}/{idPoll}",
+                defaults: new { controller = "Poll", action = "EditPoll", idPoll = 1 }
+            );
+
+            routes.MapRoute(
                 name: "Notices",
                 url: "Notice/{action}/{id}",
                 defaults: new { controller = "Notice", action = "Index", id = UrlParameter.Optional }

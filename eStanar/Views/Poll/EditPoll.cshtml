@@ -14,7 +14,7 @@
         <div class="form-group">
             <label class="control-label">Tekst ankete</label>
             @Html.TextArea("text", Model.PollDetails.Title, new { @class = "form-control", @rows = 5 })
-            @Html.Hidden("idPoll", Model.IdPoll.Value)
+            @Html.Hidden("idPoll", Model.IdPoll.Value, new { @id = "hidIdPoll"})
         </div>
         <div class="form-group">
             <label class="control-label">Datum od kada anketa vrijedi</label>
@@ -25,7 +25,8 @@
             @Html.TextBox("dateTo", Model.PollDetails.DateTo.HasValue ? Model.PollDetails.DateTo.Value.ToShortDateString() : String.Empty, new { @class = "form-control datefield" })
         </div>
         <div class="form-group text-right" style="margin-bottom:0;">
-            <button class="btn btn-sm btn-primary">Spremi</button>
+            <button id="btnDeletePoll" class="btn btn-sm btn-danger" name="delete">Obriši</button>
+            <button id="btnSavePoll" class="btn btn-sm btn-primary" name="save">Spremi</button>
         </div>
     </div>
 }
@@ -37,12 +38,14 @@
         <div class="well well-sm" style="margin:0;">
             <div class="form-group">
                 <label class="control-label">Unesite odgovor</label>
-                @Html.TextArea("text", null, new { @class = "form-control", @rows = 5 })
+                @Html.TextArea("text", null, new { @id = "txtPollOptionText", @class = "form-control", @rows = 5 })
                 @Html.Hidden("idPoll", Model.IdPoll)
-                @Html.Hidden("idPollOption", (Model.IdPollOption.HasValue ? Model.IdPollOption.Value.ToString() : String.Empty))
+                @Html.Hidden("idPollOption", (Model.IdPollOption.HasValue ? Model.IdPollOption.Value.ToString() : String.Empty), new { @id = "hidIdPollOption" })
             </div>
             <div class="form-group text-right" style="margin-bottom:0;">
-                <button class="btn btn-sm btn-primary">Spremi</button>
+                <button id="btnResetPollOption" class="btn btn-sm btn-primary" name="reset">Reset</button>
+                <button id="btnDeletePollOption" class="btn btn-sm btn-danger hidden" name="delete">Obriši</button>
+                <button id="btnSavePollOption" class="btn btn-sm btn-primary" name="save">Spremi</button>
             </div>
         </div>
     }

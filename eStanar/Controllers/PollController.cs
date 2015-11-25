@@ -39,20 +39,43 @@ namespace eStanar.Controllers
 
         public ActionResult UpdatePoll(int idPoll, string text, DateTime dateFrom, DateTime? dateTo)
         {
-            DBHelper.UpdatePoll(idPoll, null, text, dateFrom, dateTo);
+            if (Request["save"] != null) // u pitanju je spremanje promjena
+            {
+                DBHelper.UpdatePoll(idPoll, null, text, dateFrom, dateTo);
 
-            return RedirectToAction("EditPoll", new RouteValueDictionary(new { controller = "Poll", action = "EditPoll", idPoll = idPoll.ToString() }));
+                return RedirectToAction("EditPoll", new RouteValueDictionary(new { controller = "Poll", action = "EditPoll", idPoll = idPoll.ToString() }));
+            }
+            else if (Request["delete"] != null) // u pitanju je brisanje ankete
+            {
+                DBHelper.DeletePoll(idPoll);
+
+                return RedirectToAction("NewPoll");
+            }
+            else
+            {
+                return RedirectToAction("NewPoll");
+            }
         }
 
         public ActionResult InsertPollOption(int? idPollOption, int idPoll, string text)
         {
             if (idPollOption.HasValue)
             {
-                // TODO update poll option
+                if (Request["save"] != null) // u pitanju je ažuriranje odgovora
+                {
+                    DBHelper.UpdatePollOption(idPollOption.Value, text);
+                }
+                else if (Request["delete"] != null) // u pitanju je brisanje odgovora
+                {
+                    DBHelper.DeletePollOption(idPollOption.Value);
+                }
             }
             else
             {
-                DBHelper.InsertPollOption(idPoll, text);
+                if (Request["save"] != null) // u pitanju je spremanje novog odgovora
+                {
+                    DBHelper.InsertPollOption(idPoll, text);
+                }
             }
 
             return RedirectToAction("EditPoll", new RouteValueDictionary(new { controller = "Poll", action = "EditPoll", idPoll = idPoll.ToString() }));

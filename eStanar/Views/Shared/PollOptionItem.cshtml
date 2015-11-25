@@ -1,6 +1,15 @@
 ﻿@model eStanar.Domain.Entities.PollOption
 
 <li class="list-group-item" style="border-top:1px solid #FFFFFF;">
-    @Model.Text
-    @Html.Hidden("idPollOption", Model.IdPollOption)
+    <div class="media">
+        <div class="media-left">
+            <i class="fa fa-check"></i>
+        </div>
+        <div class="media-body">
+            <div class="media-body-content">
+                <span class="poll-option-text">@Model.Text</span>
+                <button class="btn btn-sm btn-primary btn-poll-option-edit pull-right" id-poll-option="@Model.IdPollOption.ToString()"><i class="fa fa-pencil pull-right"></i></button>
+            </div>
+        </div>
+    </div>
 </li>
