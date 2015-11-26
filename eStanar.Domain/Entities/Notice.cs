@@ -27,7 +27,7 @@ namespace eStanar.Domain.Entities
         public int IdStructure { get; set; }
 
         [Required]
-        [StringLength(1000)]
+        [StringLength(4000)]
         public string Text { get; set; }
 
         [Column(TypeName = "numeric")]
